@@ -19,7 +19,7 @@ def ban_user(message):
             bot.reply_to(message, "Невозможно забанить администратора.")
         else:
             bot.ban_chat_member(chat_id, user_id) # пользователь с user_id будет забанен в чате с chat_id
-            bot.reply_to(message, f"Пользователь @{message.reply_to_message.from_user.username} был забанен.")
+            bot.reply_to(message, f"Поль3ователь @{message.reply_to_message.from_user.username} был забанен.")
     else:
         bot.reply_to(message, "Эта команда должна быть использована в ответ на сообщение пользователя, которого вы хотите забанить.")
 
