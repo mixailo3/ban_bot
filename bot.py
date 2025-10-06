@@ -22,6 +22,11 @@ def ban_user(message):
             bot.reply_to(message, f"Поль3ователь @{message.reply_to_message.from_user.username} был забанен.")
     else:
         bot.reply_to(message, "Эта команда должна быть использована в ответ на сообщение пользователя, которого вы хотите забанить.")
+    
+@bot.message_handler(content_types=['new_chat_members'])
+def make_some(message):
+    bot.send_message(message.chat.id, 'I accepted a new user!')
+    bot.approve_chat_join_request(message.chat.id, message.from_user.id)
 
 @bot.message_handler(func=lambda message: True)
 def spam_message(message):
